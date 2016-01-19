@@ -8,6 +8,7 @@
 
 #import "CreatureViewController.h"
 #import "MagicalCreature.h"
+#import "ViewController.h"
 
 @interface CreatureViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *editNameTextField;
@@ -28,17 +29,26 @@
         self.navigationItem.title = self.editNameTextField.text;
         sender.title = @"Edit";
         self.editing = false;
-        NSLog(sender.title);
+    //    NSLog(sender.title);
         
     } else {
         self.editing = true;
         [self.editNameTextField setHidden:false];
         sender.title = @"Done";
-        NSLog(sender.title);
+      //  NSLog(sender.title);
 
     }
 }
 
+
+
+-(void)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC {
+    ViewController *dvc = unwindSegue.destinationViewController;
+    dvc.tempCreature
+    
+    
+    
+}
 
 
 @end

@@ -16,8 +16,8 @@
 @property NSMutableArray *creatures;
 @property (weak, nonatomic) IBOutlet UITableView *monsterTableView;
 @property (weak, nonatomic) IBOutlet UITextField *monsterNameAdd;
-@property MagicalCreature *tempCreature;
-@property NSInteger tempIndex;
+
+@property NSIndexPath* tempIndexPath;
 
 
 
@@ -68,8 +68,12 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     CreatureViewController *dvc = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.monsterTableView indexPathForSelectedRow];
-    dvc.navigationItem.title = [[self.creatures objectAtIndex:indexPath.row] name];
+    self.tempIndexPath = [self.monsterTableView indexPathForSelectedRow];
+    dvc.navigationItem.title = [[self.creatures objectAtIndex:self.tempIndexPath.row] name];
+}
+
+-(IBAction)bookDestination:(UIStoryboardSegue *)sender {
+    
 }
 
 @end
