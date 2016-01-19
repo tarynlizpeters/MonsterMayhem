@@ -7,31 +7,35 @@
 //
 
 #import "CreatureViewController.h"
+#import "MagicalCreature.h"
 
 @interface CreatureViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *editNameTextField;
 
 @end
 
 @implementation CreatureViewController
 
 - (void)viewDidLoad {
+    [self.editNameTextField setHidden:true];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)editCreatureTapped:(UIButton *)sender {
+    
+    if (self.editing) {
+        [self.editNameTextField setHidden:true];
+        self.title = self.editNameTextField.text;
+        sender.titleLabel.text = @"Edit";
+        
+    } else {
+        [self.editNameTextField setHidden:false];
+        sender.titleLabel.text = @"Done";
+        
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

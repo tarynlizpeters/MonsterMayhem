@@ -14,8 +14,8 @@
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *creatures;
-@property (weak, nonatomic) IBOutlet UITextField *monsterNameAdd;
 @property (weak, nonatomic) IBOutlet UITableView *monsterTableView;
+@property (weak, nonatomic) IBOutlet UITextField *monsterNameAdd;
 
 
 @end

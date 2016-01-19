@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fj3-AW-5Fa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fj3-AW-5Fa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -17,8 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="XxG-xY-pgn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahg-5i-Rkm">
+                                <rect key="frame" x="542" y="550" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editCreatureTapped:" destination="o06-I2-joT" eventType="touchUpInside" id="83m-gZ-6ek"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZS-2q-8LL">
+                                <rect key="frame" x="229" y="20" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="editNameTextField" destination="eZS-2q-8LL" id="oP9-fy-OaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVs-le-VZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I46-wU-cg8" id="CJR-5h-Dju">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -57,21 +74,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="k2e-pU-JQY"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-0r-Zrj">
-                                <rect key="frame" x="542" y="20" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-0r-Zrj">
+                                <rect key="frame" x="546" y="72" width="34" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Wf3-S3-OX1"/>
-                                    <constraint firstAttribute="height" constant="30" id="nM0-NF-zbE"/>
+                                    <constraint firstAttribute="width" constant="34" id="KYm-6p-ZZc"/>
+                                    <constraint firstAttribute="height" constant="35" id="zgE-Pr-kHI"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="monsterAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUR-qZ-tGN"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUb-cE-teZ">
-                                <rect key="frame" x="89" y="20" width="423" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-X8-U5X">
+                                <rect key="frame" x="356.5" y="75" width="170" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ulr-y5-wFR"/>
+                                    <constraint firstAttribute="height" constant="30" id="2hc-L1-bGw"/>
+                                    <constraint firstAttribute="width" constant="170" id="Sh6-Oo-yYc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -79,16 +97,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JUb-cE-teZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="496-dQ-KX6"/>
-                            <constraint firstItem="mtH-0r-Zrj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6TG-ta-RXo"/>
-                            <constraint firstItem="JUb-cE-teZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JkV-T4-VfW"/>
-                            <constraint firstItem="mtH-0r-Zrj" firstAttribute="leading" secondItem="JUb-cE-teZ" secondAttribute="trailing" constant="30" id="Oyw-Hk-JLQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mtH-0r-Zrj" secondAttribute="trailing" constant="8" id="hkC-Pt-Vfk"/>
+                            <constraint firstItem="mtH-0r-Zrj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Gv3-dw-xeD"/>
+                            <constraint firstItem="mtH-0r-Zrj" firstAttribute="leading" secondItem="XzC-X8-U5X" secondAttribute="trailing" constant="19.5" id="UYu-BB-RI4"/>
+                            <constraint firstItem="mtH-0r-Zrj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hve-8S-alO"/>
+                            <constraint firstItem="XzC-X8-U5X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="n8x-eG-N1X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kGo-Mk-OYs"/>
                     <connections>
-                        <outlet property="monsterNameAdd" destination="JUb-cE-teZ" id="3qg-mR-7bA"/>
+                        <outlet property="monsterNameAdd" destination="XzC-X8-U5X" id="mdB-Dq-bdx"/>
                         <outlet property="monsterTableView" destination="o8g-ZQ-GhC" id="5F1-WL-gMH"/>
                     </connections>
                 </viewController>
