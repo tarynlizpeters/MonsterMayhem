@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "MagicalCreature.h"
+#import "CreatureViewController.h"
+
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -61,6 +63,10 @@
     
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CreatureViewController *dvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.monsterTableView indexPathForSelectedRow];
+    dvc.title = [[self.creatures objectAtIndex:indexPath.row] name];
+}
 
 @end
