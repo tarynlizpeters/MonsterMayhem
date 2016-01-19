@@ -19,20 +19,23 @@
 - (void)viewDidLoad {
     [self.editNameTextField setHidden:true];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
-- (IBAction)editCreatureTapped:(UIButton *)sender {
-    
+}
+- (IBAction)editCreatureButton:(UIBarButtonItem *)sender {
+
     if (self.editing) {
         [self.editNameTextField setHidden:true];
-        self.title = self.editNameTextField.text;
-        sender.titleLabel.text = @"Edit";
+        self.navigationItem.title = self.editNameTextField.text;
+        sender.title = @"Edit";
+        self.editing = false;
+        NSLog(sender.title);
         
     } else {
+        self.editing = true;
         [self.editNameTextField setHidden:false];
-        sender.titleLabel.text = @"Done";
-        
+        sender.title = @"Done";
+        NSLog(sender.title);
+
     }
 }
 
