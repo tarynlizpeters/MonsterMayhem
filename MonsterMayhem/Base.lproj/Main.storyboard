@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fj3-AW-5Fa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fj3-AW-5Fa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -18,22 +18,34 @@
                     <view key="view" contentMode="scaleToFill" id="XxG-xY-pgn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-lR-j8K">
+                                <rect key="frame" x="206" y="175" width="187" height="48"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="75g-6m-hHs"/>
+                                    <constraint firstAttribute="height" constant="48" id="mKj-eH-Mav"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Odr-lR-j8K" firstAttribute="top" secondItem="D4b-co-tTT" secondAttribute="bottom" constant="111" id="XnK-fe-kYa"/>
+                            <constraint firstItem="Odr-lR-j8K" firstAttribute="centerX" secondItem="XxG-xY-pgn" secondAttribute="centerX" id="mou-BQ-Ybe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h2H-LD-pLu">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="YgV-SA-pbO">
-                            <connections>
-                                <segue destination="Ioo-06-2pF" kind="unwind" unwindAction="bookDestination:" id="YiG-PY-DA1"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Edit" id="DGb-w3-6Ip">
                                 <connections>
                                     <action selector="editCreatureButton:" destination="o06-I2-joT" id="Jvp-h5-UmN"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="tSy-XZ-uln">
+                            <barButtonItem id="tSy-XZ-uln">
                                 <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eZS-2q-8LL">
                                     <rect key="frame" x="311" y="7" width="231" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,15 +56,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailsLabel" destination="Odr-lR-j8K" id="UMa-9j-PbX"/>
                         <outlet property="editNameTextField" destination="eZS-2q-8LL" id="oP9-fy-OaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVs-le-VZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ioo-06-2pF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1292" y="82"/>
         </scene>
-        <!--View Controller-->
+        <!--Monster Mayhem!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -68,12 +80,28 @@
                                 <rect key="frame" x="0.0" y="69" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MonsterID" id="I46-wU-cg8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MonsterID" textLabel="9LC-6J-hJA" detailTextLabel="hvJ-y3-ou4" style="IBUITableViewCellStyleSubtitle" id="I46-wU-cg8">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I46-wU-cg8" id="CJR-5h-Dju">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9LC-6J-hJA">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hvJ-y3-ou4">
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="o06-I2-joT" kind="show" identifier="ShowCreatureSegue" id="UBc-bp-XqI"/>
@@ -105,6 +133,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ue0-G4-I9g">
+                                <rect key="frame" x="196" y="92" width="130" height="102"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,10 +145,13 @@
                             <constraint firstItem="XzC-X8-U5X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="n8x-eG-N1X"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kGo-Mk-OYs"/>
+                    <navigationItem key="navigationItem" title="Monster Mayhem!" id="kGo-Mk-OYs">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xxy-MF-jrY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="monsterNameAdd" destination="XzC-X8-U5X" id="mdB-Dq-bdx"/>
                         <outlet property="monsterTableView" destination="o8g-ZQ-GhC" id="5F1-WL-gMH"/>
+                        <outlet property="picture" destination="Ue0-G4-I9g" id="hAq-Ug-1wh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

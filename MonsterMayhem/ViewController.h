@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
+
 
 @interface ViewController : UIViewController
+@property MagicalCreature *tempCreature;
 
-@property NSString *tempCreature;
 
 
 @end

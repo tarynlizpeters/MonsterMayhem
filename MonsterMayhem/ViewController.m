@@ -7,17 +7,21 @@
 //
 
 #import "ViewController.h"
-#import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#import "MagicalCreature.h"
 
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property NSIndexPath *tempIndexPath;
 @property NSMutableArray *creatures;
+
 @property (weak, nonatomic) IBOutlet UITableView *monsterTableView;
 @property (weak, nonatomic) IBOutlet UITextField *monsterNameAdd;
+@property (weak, nonatomic) IBOutlet UIImageView *picture;
 
-@property NSIndexPath* tempIndexPath;
+@property CreatureViewController *dvc;
 
 
 
@@ -28,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.creatures = [[NSMutableArray alloc] init];
     MagicalCreature *creatureOne = [[MagicalCreature alloc] init];
     MagicalCreature *creatureTwo = [[MagicalCreature alloc] init];
     MagicalCreature *creatureThree = [[MagicalCreature alloc] init];
@@ -37,19 +40,41 @@
     creatureTwo.name = @"Judy";
     creatureThree.name = @"Chaz";
     
+    creatureOne.details = @"Likes pie";
+    creatureTwo.details = @"Big and scary";
+    creatureThree.details = @"Scaredy cat";
+    
+    creatureOne.accessories = @"Pie of Doom";
+    creatureTwo.accessories = @"Giant axe";
+    creatureThree.accessories = @"Teddy bear";
+
+    creatureOne.images = [UIImage imageNamed:@"creatureone.png"];
+    creatureTwo.images = [UIImage imageNamed:@"creaturetwo.png"];
+    creatureThree.images = [UIImage imageNamed:@"creaturethree.png"];
+    
+    self.creatures = [NSMutableArray new];
     [self.creatures addObject:creatureOne];
     [self.creatures addObject:creatureTwo];
     [self.creatures addObject:creatureThree];
-
     
 }
+
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MonsterID"];
+    
+    if (self.creatures.count > 0) {
+        
     cell.textLabel.text = [[self.creatures objectAtIndex:indexPath.row] name];
-    return cell;
+    cell.detailTextLabel.text = [[self.creatures objectAtIndex:indexPath.row] details];
+    cell.detailTextLabel.text = [[self.creatures objectAtIndex:indexPath.row] accessories];
+    cell.imageView.image = [[self.creatures objectAtIndex:indexPath.row]images];
+        
+    }
+        return cell;
     
 }
+
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.creatures.count;
@@ -60,20 +85,22 @@
     addCreature.name = self.monsterNameAdd.text;
     [self.creatures addObject:addCreature];
     self.monsterNameAdd.text = @"";
-    
     [self.monsterTableView reloadData];
-    
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     CreatureViewController *dvc = segue.destinationViewController;
     self.tempIndexPath = [self.monsterTableView indexPathForSelectedRow];
-    dvc.navigationItem.title = [[self.creatures objectAtIndex:self.tempIndexPath.row] name];
-}
-
--(IBAction)bookDestination:(UIStoryboardSegue *)sender {
     
+    //when i added the variable monster, broke my back button
+    
+    MagicalCreature *monster = [self.creatures objectAtIndex:self.tempIndexPath.row];
+    dvc.navigationItem.title = monster.name;
+    dvc.detailsLabel.text = monster.details;
+    self.tempCreature = monster;
+    dvc.tempCreature = monster;
+
 }
 
 @end

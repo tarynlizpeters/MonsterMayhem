@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
+#import "ViewController.h"
+
+
+
+
 
 @interface CreatureViewController : UIViewController
+@property MagicalCreature *tempCreature;
+@property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
+
+
 
 @end
