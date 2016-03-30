@@ -15,31 +15,21 @@
                         <viewControllerLayoutGuide type="top" id="D4b-co-tTT"/>
                         <viewControllerLayoutGuide type="bottom" id="gxj-Hy-jVR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XxG-xY-pgn">
+                    <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XxG-xY-pgn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-lR-j8K">
-                                <rect key="frame" x="206" y="93" width="187" height="48"/>
+                                <rect key="frame" x="75" y="93" width="449" height="48"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="187" id="kmi-BD-c8F"/>
+                                    <constraint firstAttribute="height" constant="48" id="v4s-Kl-cNW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-uX-EDD">
-                                <rect key="frame" x="206" y="189" width="187" height="48"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="h5C-Uo-yBG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2CN-Xu-uBm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2CN-Xu-uBm">
                                 <rect key="frame" x="175" y="274" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="3Mg-Nr-yW6"/>
@@ -49,16 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Odr-lR-j8K" firstAttribute="top" secondItem="D4b-co-tTT" secondAttribute="bottom" constant="29" id="1gR-nJ-AQt"/>
-                            <constraint firstItem="b3O-uX-EDD" firstAttribute="top" secondItem="Odr-lR-j8K" secondAttribute="bottom" constant="48" id="3Xn-JM-At8"/>
-                            <constraint firstItem="2CN-Xu-uBm" firstAttribute="top" secondItem="b3O-uX-EDD" secondAttribute="bottom" constant="37" id="8eE-Jr-Inn"/>
+                            <constraint firstItem="Odr-lR-j8K" firstAttribute="centerX" secondItem="2CN-Xu-uBm" secondAttribute="centerX" id="AYT-1K-c3u"/>
+                            <constraint firstItem="Odr-lR-j8K" firstAttribute="leading" secondItem="XxG-xY-pgn" secondAttribute="leadingMargin" constant="55" id="CTo-gE-JZi"/>
                             <constraint firstItem="2CN-Xu-uBm" firstAttribute="leading" secondItem="XxG-xY-pgn" secondAttribute="leadingMargin" constant="155" id="Cv2-BT-d94"/>
-                            <constraint firstItem="Odr-lR-j8K" firstAttribute="leading" secondItem="XxG-xY-pgn" secondAttribute="leadingMargin" constant="186" id="Fob-cy-Elf"/>
-                            <constraint firstItem="b3O-uX-EDD" firstAttribute="trailing" secondItem="Odr-lR-j8K" secondAttribute="trailing" id="Gwx-pa-tUi"/>
-                            <constraint firstItem="b3O-uX-EDD" firstAttribute="leading" secondItem="Odr-lR-j8K" secondAttribute="leading" id="Iix-wA-6yX"/>
                             <constraint firstItem="gxj-Hy-jVR" firstAttribute="top" secondItem="2CN-Xu-uBm" secondAttribute="bottom" constant="76" id="Ncx-DR-bzx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2CN-Xu-uBm" secondAttribute="trailing" constant="155" id="cTa-Ja-9bw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Odr-lR-j8K" secondAttribute="trailing" constant="187" id="xYU-zg-Y49"/>
+                            <constraint firstItem="Odr-lR-j8K" firstAttribute="top" secondItem="D4b-co-tTT" secondAttribute="bottom" constant="29" id="qwi-gO-b98"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h2H-LD-pLu">
@@ -80,7 +66,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="accessoryLabel" destination="b3O-uX-EDD" id="oa1-Sl-aQQ"/>
                         <outlet property="detailLabel" destination="Odr-lR-j8K" id="Zeh-gg-8d5"/>
                         <outlet property="editNameTextField" destination="eZS-2q-8LL" id="oP9-fy-OaJ"/>
                         <outlet property="imageView" destination="2CN-Xu-uBm" id="0th-rF-7Re"/>
