@@ -8,15 +8,15 @@
 
 #import "MagicalCreature.h"
 
+
 @implementation MagicalCreature
--(instancetype) initWithName: (NSString *)name andDetails:(NSString *)details andAccessories:(NSString *)accessories andImage:(NSObject *)images {
+-(instancetype) initWithName: (NSString *)name andDetails:(NSString *)details andImage:(UIImage *)images {
     
     self = [super init];
     if (self)
-        self.name = name;
+    self.name = name;
     self.details = details;
-    self.accessories = accessories;
-    self.images = images;
+    self.image = images;
     return self;
 }
 

@@ -7,22 +7,26 @@
 //
 
 #import "CreatureViewController.h"
-#import "MagicalCreature.h"
 
 
 @interface CreatureViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *editNameTextField;
-@property NSString *details;
-
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation CreatureViewController
 
 - (void)viewDidLoad {
-    [self.editNameTextField setHidden:true];
     [super viewDidLoad];
-    self.detailsLabel.text = self.details;
+    [self.editNameTextField setHidden:true];
+    self.title = self.tempCreature.name;
+    self.detailLabel.text = self.tempCreature.details;
+    self.imageView.image = self.tempCreature.image;
+    
+
 
 }
 
